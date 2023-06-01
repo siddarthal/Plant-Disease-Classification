@@ -158,7 +158,7 @@ export const ImageUpload = () => {
       formData.append("file", selectedFile);
       let res = await axios({
         method: "post",
-        url: process.env.REACT_APP_API_URL,
+        url: 'http://localhost:8000/predict',
         data: formData,
       });
       if (res.status === 200) {
@@ -213,10 +213,10 @@ export const ImageUpload = () => {
       <AppBar position="static" className={classes.appbar}>
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            CodeBasics: Potato Disease Classification
+            Batch 9:Plant Disease Detection and Classification Based on CNN.
           </Typography>
           <div className={classes.grow} />
-          <Avatar src={cblogo}></Avatar>
+          {/* <Avatar src={cblogo}></Avatar> */}
         </Toolbar>
       </AppBar>
       <Container maxWidth={false} className={classes.mainContainer} disableGutters={true}>
@@ -242,7 +242,7 @@ export const ImageUpload = () => {
               {!image && <CardContent className={classes.content}>
                 <DropzoneArea
                   acceptedFiles={['image/*']}
-                  dropzoneText={"Drag and drop an image of a potato plant leaf to process"}
+                  dropzoneText={"Drag and drop an image of a  plant leaf to process"}
                   onChange={onSelectFile}
                 />
               </CardContent>}

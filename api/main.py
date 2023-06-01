@@ -22,9 +22,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-MODEL = tf.keras.models.load_model("../saved_models/1")
+MODEL = tf.keras.models.load_model("../fullmodel/1")
 
-CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
+CLASS_NAMES = ["Pepper__bell___Bacterial_spot",
+ "Pepper__bell___healthy",
+ "Potato___Early_blight",
+ "Potato___Late_blight",
+ "Potato___healthy",
+ "Tomato_Leaf_Mold",
+ "Tomato__Tomato_mosaic_virus",
+ "Tomato_healthy"]
 
 @app.get("/ping")
 async def ping():
